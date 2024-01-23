@@ -19,3 +19,11 @@ services:
     depends_on:
       - db
       - apparel
+  site:
+    build: ./site
+    volumes:
+      - ./site:/src
+    ports:
+      - 5000:80
+    depends_on:
+      - prices
